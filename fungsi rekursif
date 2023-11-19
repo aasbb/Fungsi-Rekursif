@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+// Fungsi yang menghitung nilai suku ke-n dari barisan
+int calculate(int n)
+{
+    if (n == 0)
+    {
+        return 3; // U0 = 3
+    }
+    else if (n == 1)
+    {
+        return 6; // U1 = 6
+    }
+    else
+    {
+        // Menggunakan rekurens untuk menghitung suku ke-n
+        return calculate(n - 1) + 6 * calculate(n - 2);
+    }
+}
+
+int main()
+{
+    int sukuKe;
+
+    // Input nilai n dari pengguna
+    printf("Masukkan nilai suku ke- ");
+    scanf("%d", &sukuKe);
+
+    // Memanggil fungsi hitungSuku dan menampilkan hasilnya
+    printf("Nilai suku ke-%d dari deret adalah: %d\n", sukuKe, calculate(sukuKe));
+
+    return 0;
+}
